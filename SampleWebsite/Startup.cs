@@ -7,7 +7,9 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using SimplyCore.Foundations.Hosting;
+using SimplyCore.Foundation.Hosting;
+using Microsoft.AspNet.Diagnostics;
+using SimplyCore.Foundation.Service;
 
 namespace SampleWebsite
 {
@@ -27,8 +29,12 @@ namespace SampleWebsite
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //services.AddScoped<ISimplyRecorder, SimplyCoreRecorderService>();
+            services.AddSimplyCore();
             // Add framework services.
             services.AddMvc();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,7 +44,13 @@ namespace SampleWebsite
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseSimplyCoreRecorder();
+
+            app.UseSimplyCoreRecorder(new SimplyCoreRecorderOptions()
+            {
+                MatchPattern = "!SimplyCore"
+            });
+
+            app.UseRuntimeInfoPage("/path");
 
             if (env.IsDevelopment())
             {
@@ -60,7 +72,7 @@ namespace SampleWebsite
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
+            
         }
 
         // Entry point for the application.

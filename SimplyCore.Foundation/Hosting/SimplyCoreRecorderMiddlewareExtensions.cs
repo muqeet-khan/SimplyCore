@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Builder;
 
-namespace SimplyCore.Foundations.Hosting
+namespace SimplyCore.Foundation.Hosting
 {
     public static class SimplyCoreRecorderMiddlewareExtensions
     {
@@ -8,6 +8,11 @@ namespace SimplyCore.Foundations.Hosting
         public static IApplicationBuilder UseSimplyCoreRecorder(this IApplicationBuilder builder)
         {
             return builder.UseMiddleware<SimplyCoreRecorderMiddleware>();
+        }
+
+        public static IApplicationBuilder UseSimplyCoreRecorder(this IApplicationBuilder builder,SimplyCoreRecorderOptions options)
+        {
+            return builder.UseMiddleware<SimplyCoreRecorderMiddleware>(options);
         }
     }
 }

@@ -1,3 +1,6 @@
 {
-  "projects": [ "SimplyCore.TagHelpers/src" ]
+  "projects": [ "SimplyCore.TagHelpers/src" ],
+  "sdk": {
+    "version": "1.0.0-rc1-update1"
+  }
 }
