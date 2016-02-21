@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 using SimplyCore.Foundation.Hosting;
 using Microsoft.AspNet.Diagnostics;
 using SimplyCore.Foundation.Service;
+using SimplyCore.UI.Hosting;
+using SimplyCore.UI.Service;
 
 namespace SampleWebsite
 {
@@ -30,11 +32,13 @@ namespace SampleWebsite
         public void ConfigureServices(IServiceCollection services)
         {
 
-            //services.AddScoped<ISimplyRecorder, SimplyCoreRecorderService>();
+           // Add framework services.
+           services.AddMvc();
+
             services.AddSimplyCore();
-            // Add framework services.
-            services.AddMvc();
-            
+
+            services.AddSimplyCoreUI();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,8 +51,10 @@ namespace SampleWebsite
 
             app.UseSimplyCoreRecorder(new SimplyCoreRecorderOptions()
             {
-                MatchPattern = "!SimplyCore"
+                MatchPattern = "!Simply"
             });
+
+            app.UseSimplyCoreRecorderUI();
 
             app.UseRuntimeInfoPage("/path");
 
@@ -72,7 +78,9 @@ namespace SampleWebsite
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            
+
+
+
         }
 
         // Entry point for the application.

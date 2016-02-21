@@ -17,6 +17,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SimplyCore.Foundation", "..
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SampleWebsite", "..\SampleWebsite\SampleWebsite.xproj", "{AEAD750F-4FEC-497C-BB12-CA6534FAA13B}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SimplyCore.UI", "src\SimplyCore.UI\SimplyCore.UI.xproj", "{C169BDF3-E625-431B-BCCF-2BE7AA5E8B36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{AEAD750F-4FEC-497C-BB12-CA6534FAA13B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEAD750F-4FEC-497C-BB12-CA6534FAA13B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEAD750F-4FEC-497C-BB12-CA6534FAA13B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C169BDF3-E625-431B-BCCF-2BE7AA5E8B36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C169BDF3-E625-431B-BCCF-2BE7AA5E8B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C169BDF3-E625-431B-BCCF-2BE7AA5E8B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C169BDF3-E625-431B-BCCF-2BE7AA5E8B36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,5 +49,6 @@ Global
 		{F075946B-85DB-43E3-A1EC-31D054D4C396} = {7D991DAA-1433-4C3C-8E28-7EAE9B954364}
 		{48A7C234-6326-4AB6-BFC4-3E09644965DF} = {7D991DAA-1433-4C3C-8E28-7EAE9B954364}
 		{AEAD750F-4FEC-497C-BB12-CA6534FAA13B} = {7D991DAA-1433-4C3C-8E28-7EAE9B954364}
+		{C169BDF3-E625-431B-BCCF-2BE7AA5E8B36} = {7D991DAA-1433-4C3C-8E28-7EAE9B954364}
 	EndGlobalSection
 EndGlobal
